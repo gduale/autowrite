@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# coding: utf8
 
 import pyxhook
 import time
@@ -9,10 +10,7 @@ correspondance = {"cdt":"Cordialement","bye":"aurevoir","slt":"Salut","res":"Veu
 
 def kbevent(event):
   global running
-  #print(event)
   k.append(event.Key)
-  #print(k)
-  #print(len(k))
 
   # On transforme
   if event.Ascii == 192: #if F3 pressed
