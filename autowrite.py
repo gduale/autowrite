@@ -4,9 +4,10 @@
 import pyxhook
 import time
 import autopy
+import keyboard
 
 k = list()
-correspondance = {"cdt":"Cordialement","bye":"aurevoir","slt":"Salut","res":"Veuillez agréer mes profonds respects"}
+correspondance = {"cdt":"Cordialement","bye":"aurevoir","slt":"Salut","res":"Veuillez agréer mes profonds respects","jcc":"Je coupe les notifs du chat pour 1H, si besoin tél. Merci."}
 
 def kbevent(event):
   global running
@@ -18,10 +19,12 @@ def kbevent(event):
     v = k[-4:]
     les_trois_derniers = v[:3]
     for e in les_trois_derniers:
-        chaine += e
+      chaine += e
 
     if chaine in correspondance:
-        autopy.key.type_string(correspondance[chaine])
+      keyboard.press_and_release('backspace')
+      time.sleep(0.1)
+      autopy.key.type_string(correspondance[chaine])
 
 # Create hookmanager
 hookman = pyxhook.HookManager()
