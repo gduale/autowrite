@@ -1,5 +1,3 @@
 # autowrite
 
-voir aussi https://pypi.org/project/pynput/ si besoin.
-
-test1
+See also: https://pypi.org/project/pynput/
